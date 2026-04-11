@@ -87,19 +87,19 @@
   }
   /* ============== */
 
-  img {
-    padding: 0.3rem;
+img {
+    padding: 0.5rem;
     box-shadow: inset 5.5px -0.5px 84px -29px #5e87b6;
-    height: 6rem;
-    width: 6rem;
-    border-radius: 8px;
-    transition: box-shadow 0.5s;
+    height: 12rem;
+    width: 12rem;
+    border-radius: 12px;
+    transition: 0.8s;
   }
 
   img:hover {
+    border-radius: 15px;
     box-shadow: inset 5.5px -0.5px 84px -29px #3255c7;
   }
-
   .Second-song {
     display: flex;
     align-items: end;
@@ -114,8 +114,8 @@
     height: 8.5rem;
     margin-top: 0.5rem;
     margin-left: 0.1rem;
-    background-color: none;
-    backdrop-filter: blur(150px);
+    background: transparent;
+    /* backdrop-filter: blur(150px); */
   }
   .Slist-song {
     display: flex;
