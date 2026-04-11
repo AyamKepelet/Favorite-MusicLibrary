@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music!</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="loadingScreen" id="loadingscreen">
+      <div class="spinner-nested-arc"></div>
+    </div>
+    <main class="Main_ContainerPhone" id="main-loading">
+      <div class="myLibrary">
+        <div class="photoProfile">
+          <img class="imgPhoto" src="image/phtoprofile.jpg.jpeg" alt="profile" />
+        </div>
+        <span class="title">My Library</span>
+      </div>
+      <div class="f-heading">Favorite Song</div>
+      <!-- First List -->
+      <div class="First-song">Lany</div>
+      <div class="First-Content">
+        <ul class="flist-song">
+          <li class="btnPlay">
+            <button>
+            <audio class="AudioMusic">dna</audio>
+            <img src="image/dna.jpeg" alt="dna" />
+        <!-- <span class="DescriptionMusic">
+          <h3>Lany</h3>
+          <p>DNA></p>
+        </span> -->
+          </button>
+        </li>
+          <li>
+          <button class="btnPlay">
+          <audio class="AudioMusic">xxl</audio>
+            <img src="image/XXL lanyjpg.jpg.jpeg" alt="xxl" />
+          </button>
+        <!-- <span class="DescriptionMusic"></span> -->
+        </li>
+          <li><button class="btnPlay">
+            <audio class="AudioMusic">anything4you</audio>
+            <img src="image/anything4you.png" alt="anything4you" />
+          </button></li>
+          <li><button class="btnPlay">
+            <audio class="AudioMusic"></audio>
+            <img src="image/anything4you.png" alt="you!" />
+          </button></li>
+        </ul>
+      </div>
+      <!-- ================ -->
+       <!-- Second List -->
+      <div class="Second-song">Niki</div>
+      <div class="Second-Content">
+        <ul class="Slist-song">
+          <li>
+            <button class="BtnNiki">
+            <audio class="AudioNiki">Autumn</audio>
+            <img src="image/niki.jpeg" alt="autumn" />
+            </button></li>
+          <li>
+            <button class="BtnNiki">
+            <audio class="AudioNiki">Backburner</audio>
+            <img src="image/niki.jpeg" alt="backburner" />
+            </button></li>
+          <li>
+            <button class="BtnNiki">
+            <audio class="AudioNiki">LalaLostYou(Acoustic)</audio>
+            <img src="image/lalalostyou.jpg.jpeg" alt="lalalostyou" />
+            </button></li>
+          <li>
+            <button class="BtnNiki">
+            <audio class="AudioNiki">Lowkey</audio>
+            <img src="image/lowkey.jpeg" alt="lowkey" />
+            </button></li>
+        </ul>
+      </div>
+      <!-- =============== -->
+       <!-- MenuBar -->
+        <div class="menuBar">
+          <span class="backgroundMenuBar MenuBar" id="bgMenuBar"></span>
+          </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+    <script src="node_modules/@tsparticles/engine/tsparticles.engine.min.js"></script>
+  </body>
+</html>
