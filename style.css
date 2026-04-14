@@ -4,6 +4,11 @@
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   list-style: none;
   scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
 }
 /* Color */
 :root {
@@ -14,8 +19,7 @@
 
 
 /* Phone screen */
-@media only screen and (max-width: 375px) {
-
+@media only screen and (max-width: 480px) {
 /* photo Profile */
 .myLibrary {
   display: flex;
@@ -38,14 +42,14 @@
     display: flex;
     justify-content: start;
     width: 100%;
-    height: 120%;
+    height: 100%;
     background-image: radial-gradient(
       125% 125% at 50% 90%,
       #000000 40%,
       #0d1a36 100%
     );
     flex-direction: column;
-    background-size: 375px 667px;
+    background-size: 100%;
     overflow-x: hidden;
     background-color: var(--background-color);
   }
@@ -62,7 +66,7 @@
     display: flex;
     align-items: end;
     padding-top: 0.5rem;
-    padding-left: 0.5rem;
+    /* padding-left: 0.5rem; */
     font-size: 1rem;
     color: var(--heading-list);
   }
@@ -73,8 +77,6 @@
     height: 8.5rem;
     margin-top: 0.5rem;
     margin-left: 0.1rem;
-    background-color: none;
-    backdrop-filter: blur(150px);
   }
   .flist-song {
     display: flex;
@@ -111,11 +113,10 @@ img {
   .Second-Content {
     display: flex;
     width: 18rem;
-    height: 8.5rem;
+    height: max-content;
     margin-top: 0.5rem;
     margin-left: 0.1rem;
     background: transparent;
-    /* backdrop-filter: blur(150px); */
   }
   .Slist-song {
     display: flex;
@@ -181,8 +182,9 @@ img {
   }
 }
 
-/* ======= pc size ======= */
+/* ======= Laptop size ======= */
 /* photo Profile */
+@media only screen and (max-width: 1024px) {
 .myLibrary {
   display: flex;
   padding: 2rem;
@@ -204,7 +206,7 @@ img {
     display: flex;
     justify-content: start;
     width: 100%;
-    height: 40.5rem;
+    height: 50rem;
     background-image: radial-gradient(
       125% 125% at 50% 90%,
       #000000 40%,
@@ -244,6 +246,7 @@ img {
     margin-top: 0.5rem;
     margin-left: 1.1rem;
     background-color: transparent;
+    -webkit-backdrop-filter: blur(15px);
     backdrop-filter: blur(15px);
     margin-bottom: 1rem;
   }
@@ -313,6 +316,7 @@ img {
     margin-top: 0.5rem;
     margin-left: 1.1rem;
     background-color: none;
+    -webkit-backdrop-filter: blur(150px);
     backdrop-filter: blur(150px);
     margin-bottom: 1rem;
     position: relative;
@@ -415,3 +419,237 @@ img {
 }
 
 /* ======== */
+}
+/* Desktop size */
+@media only screen and (max-width: 1920px) { 
+  .myLibrary {
+  display: flex;
+  padding: 2rem;
+  width: 100%;
+  align-items: center;
+}
+.imgPhoto {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 1rem;
+}
+.title {
+  color: var(--heading-color);
+  padding-left: 1rem;
+  font-size: 2rem;
+}
+.Main_ContainerPhone {
+    opacity: 0;
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    height: 60rem;
+    background-image: radial-gradient(
+      125% 125% at 50% 90%,
+      #000000 40%,
+      #0d1a36 100%
+    );
+    flex-direction: column;
+    background-size: 100%;
+    overflow-x: hidden;
+    background-color: var(--background-color);
+  }
+  .f-heading {
+    display: flex;
+    align-items: end;
+    height: 2rem;
+    width: 100%;
+    justify-content: center;
+    padding-left: 1rem;
+    font-size: 2.2rem;
+    color: var(--heading-color);
+  }
+  /* First List */
+  .First-song {
+    display: flex;
+    align-items: end;
+    padding-top: 0.5rem;
+    padding-left: 2.5rem;
+    font-size: 1.66rem;
+    width: 100%;
+    justify-content: start;
+    color: var(--heading-list);
+  }
+
+  .First-Content {
+    display: flex;
+    width: 100%;
+    height: max-content;
+    margin-top: 0.5rem;
+    margin-left: 1.1rem;
+    background-color: transparent;
+    backdrop-filter: blur(15px);
+  }
+  .flist-song {
+    display: flex;
+    overflow-y: hidden;
+    justify-content: start;
+    overflow-x: scroll;
+    width: 100%;
+  }
+  .flist-song li {
+    margin: 0.5rem;
+  }
+  /* ============== */
+
+/* Description */
+  /* .DescriptionMusic{
+    display: none;
+    background-color: rgb(201, 146, 146);
+    flex-direction: column;
+    position: fixed;
+    width: 12.3rem;
+    bottom: 1rem;
+    height: max-content;
+    transition: all 1s;
+  } */
+/* ======== */
+
+/* Deskripsi Lagu Content */
+  /* .HDeskripsiLagu{
+    display: flex;
+    color: white;
+  }
+  .paragraphDeskripsi{
+    display: flex;
+    color: white;
+  }
+ */
+
+/* ========= */
+img {
+    padding: 0.5rem;
+    box-shadow: inset 5.5px -0.5px 84px -29px #5e87b6;
+    height: 12rem;
+    width: 12rem;
+    border-radius: 12px;
+    transition: 0.8s;
+  }
+
+  img:hover {
+    border-radius: 15px;
+    box-shadow: inset 5.5px -0.5px 84px -29px #3255c7;
+  }
+
+  .Second-song {
+    display: flex;
+    align-items: end;
+    padding-left: 2.5rem;
+    font-size: 1.66rem;
+    color: var(--heading-list);
+  }
+  .Second-Content {
+    display: flex;
+    width: 100%;
+    height: max-content;
+    margin-top: 0.5rem;
+    margin-left: 1.1rem;
+    background-color: transparent;
+    backdrop-filter: blur(150px);
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  .Slist-song {
+    display: flex;
+    justify-content: start;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    width: 100%;
+  }
+  .Slist-song > li {
+    margin: 0.5rem;
+  }
+  li > button {
+    border: none;
+    background: none;
+  }
+
+  /* Loading screen */
+  .spinner-nested-arc {
+    position: fixed;
+    width: 56px;
+    height: 56px;
+    display: grid;
+    border: 4.5px solid #0000;
+    border-radius: 50%;
+    border-color: var(--heading-list) #0000;
+    animation: spinner-e04l1k 1s infinite linear;
+  }
+
+  .loadingScreen {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 9999999;
+    opacity: 1;
+  }
+
+  .spinner-nested-arc::before,
+  .spinner-nested-arc::after {
+    content: "";
+    grid-area: 1/1;
+    margin: 2.2px;
+    border: inherit;
+    border-radius: 50%;
+  }
+
+  .spinner-nested-arc::before {
+    border-color: #256176 #0000;
+    animation: inherit;
+    animation-duration: 0.5s;
+    animation-direction: reverse;
+  }
+
+  .spinner-nested-arc::after {
+    margin: 8.9px;
+  }
+
+  @keyframes spinner-e04l1k {
+    100% {
+      transform: rotate(1turn);
+    }
+  }
+
+  /* Menu Bar */
+.menuBar{
+  display: flex;
+  position: fixed;
+  width: 100%;
+  justify-content: end;
+  align-items: center;
+  right: 10rem;
+  top: 62%;
+  height: 12rem;
+}
+.backgroundMenuBar{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 1rem;
+  background: transparent;
+  width: 20rem;
+  transition: 1s;
+}
+.backgroundMenuBar:hover{
+  box-shadow: 0rem 0rem 0.8rem 1rem #0d1a36;
+}
+.MenuTitles{
+  display: flex;
+  margin-left: 1rem;
+  padding: 0.8rem;
+  color: #0c5fdb;
+  font-size: 2rem;
+  width: 100%;
+  justify-content: start;  
+}
+
+/* ======== */
+}

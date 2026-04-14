@@ -46,42 +46,42 @@ window.addEventListener("DOMContentLoaded",function(){
       isPlayingByNiki = true
     })  
   }
- audio.forEach((audios) =>{
-      audios.addEventListener("play",()=>{
-        audio.forEach(current => {
-          if(current !== audios){
-            current.pause()
-            current.controls = false
-          }
-        });
-        audios.controls = true
-      })
-    })
-  audiosNiki.forEach((audio) =>{
-    audio.addEventListener("play",()=>{
-        audiosNiki.forEach(current => {
-          if(current !== audio){
-            current.pause()
-            current.controls = false
-          }
-        });
-        audio.controls = true
-      })
-    })
-let titles = document.createElement("span")
-titles.classList.add("MenuTitles")
+  
+const allAudios = document.querySelectorAll("audio");
+
+allAudios.forEach(audio => {
+  audio.addEventListener("play", () => {
+
+    allAudios.forEach(other => {
+      if (other !== audio) {
+        other.pause();
+        other.controls = false;
+      }
+    });
+
+    audio.controls = true;
+  });
+});
+
+let titlesLany = document.createElement("span")
+titlesLany.classList.add("MenuTitles")
+let titlesNiki = document.createElement("span")
+titlesNiki.classList.add("MenuTitles")
 //Button Lany Playlist
 btn[0].addEventListener("click",function(){
     try{
+    if(isPlayingByNiki){
+      isPlayingByNiki = false
+    }
     songsLany[0].music1 = true
   if(isPlaying == false || songsLany[0].music2 === true || songsLany[0].music3 === true || songsLany[0].music4 == true){
     for (let i = 0; i < audio.length; i++) {
       audio[i].pause()
     }
     console.log(songsLany[0].title1)
-  console.log(titles)
-    titles.textContent = songsLany[0].title1
-    MenuBar.append(titles)
+  console.log(titlesLany)
+    titlesLany.textContent = songsLany[0].title1
+    MenuBar.append(titlesLany)
     MenuBar.append(audio[0])
     audio[0].controls = true
     isPlaying = true
@@ -89,7 +89,7 @@ btn[0].addEventListener("click",function(){
       audio[0].load()
     console.log(isPlaying)
       audio[0].play()
-  }else if(isPlaying == true){
+  }else if(isPlaying){
   audio[0].pause()
       isPlaying = false
     console.log(isPlaying)
@@ -117,9 +117,12 @@ btn[1].addEventListener("click",function(){
     }
   }
   console.log(songsLany[1].title2)
-  console.log(titles)
-  titles.textContent = songsLany[1].title2
-    MenuBar.append(titles)
+  console.log(titlesLany)
+  titlesLany.textContent = songsLany[1].title2
+  if(isPlayingByNiki){
+      isPlayingByNiki = false
+  }
+    MenuBar.append(titlesLany)
     MenuBar.append(audio[1])
     audio[1].controls = true
     isPlaying = true
@@ -153,8 +156,11 @@ btn[2].addEventListener("click",function(){
       audio[i].pause()
     }
   }
-  titles.textContent = songsLany[2].title3
-  MenuBar.append(titles)
+  titlesLany.textContent = songsLany[2].title3
+  if(isPlayingByNiki){
+      isPlayingByNiki = false
+  }
+  MenuBar.append(titlesLany)
     MenuBar.append(audio[2])
     audio[2].controls = true
       audio[2].src = songsLany[2].src
@@ -185,8 +191,11 @@ btn[3].addEventListener("click",function(){
       audio[i].pause()
     }
   }
-  titles.textContent = songsLany[3].title4
-  MenuBar.append(titles)
+  titlesLany.textContent = songsLany[3].title4
+  if(isPlayingByNiki){
+      isPlayingByNiki = false
+  }
+  MenuBar.append(titlesLany)
     MenuBar.append(audio[3])
     audio[3].controls = true
       audio[3].src = songsLany[3].src
@@ -226,8 +235,11 @@ btnNiki[0].addEventListener("click",function(){
       audiosNiki[i].pause()
     }
   }
-  titles.textContent = songsNiki[0].title1
-  MenuBar.append(titles)
+  titlesNiki.textContent = songsNiki[0].title1
+  if(isPlayingByLany){
+      isPlayingByLany = false
+  }
+  MenuBar.append(titlesNiki)
     MenuBar.append(audiosNiki[0])
     audiosNiki[0].controls = true
       audiosNiki[0].src = songsNiki[0].src
@@ -238,7 +250,7 @@ btnNiki[0].addEventListener("click",function(){
       isPlaying = false
     console.log("WOrk1")
       audiosNiki[0].music1 = false
-  } else if(isPlayingByLany && isPlaying){
+  } else if(isPlayingByLany && !isPlayingByNiki){
     console.log("WOrk")
       audiosNiki[0].pause()
       isPlaying = false
@@ -262,8 +274,11 @@ btnNiki[1].addEventListener("click",function(){
       audiosNiki[i].pause()
     }
   }
-  titles.textContent = songsNiki[1].title2
-  MenuBar.append(titles)
+  titlesNiki.textContent = songsNiki[1].title2
+  if(isPlayingByLany){
+      isPlayingByLany = false
+  }
+  MenuBar.append(titlesNiki)
     MenuBar.append(audiosNiki[1])
     audiosNiki[1].controls = true
       audiosNiki[1].src = songsNiki[1].src
@@ -291,8 +306,11 @@ btnNiki[2].addEventListener("click",function(){
       audiosNiki[i].pause()
     }
   }
-  titles.textContent = songsNiki[2].title3
-  MenuBar.append(titles)
+  titlesNiki.textContent = songsNiki[2].title3
+  if(isPlayingByLany){
+      isPlayingByLany = false
+  }
+  MenuBar.append(titlesNiki)
     MenuBar.append(audiosNiki[2])
     audiosNiki[2].controls = true
       audiosNiki[2].src = songsNiki[2].src
@@ -320,8 +338,11 @@ btnNiki[3].addEventListener("click",function(){
       audiosNiki[i].pause()
     }
   }
-  titles.textContent = songsNiki[3].title4
-  MenuBar.append(titles)
+  titlesNiki.textContent = songsNiki[3].title4
+  if(isPlayingByLany){
+      isPlayingByLany = false
+  }
+  MenuBar.append(titlesNiki)
     MenuBar.append(audiosNiki[3])
     audiosNiki[3].controls = true
       audiosNiki[3].src = songsNiki[3].src
