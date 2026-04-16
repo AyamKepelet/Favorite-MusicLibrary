@@ -71,6 +71,7 @@ titlesNiki.classList.add("MenuTitles")
 btn[0].addEventListener("click",function(){
     try{
     if(isPlayingByNiki){
+      titlesNiki.remove()
       isPlayingByNiki = false
     }
     songsLany[0].music1 = true
@@ -120,6 +121,7 @@ btn[1].addEventListener("click",function(){
   console.log(titlesLany)
   titlesLany.textContent = songsLany[1].title2
   if(isPlayingByNiki){
+      titlesNiki.remove()
       isPlayingByNiki = false
   }
     MenuBar.append(titlesLany)
@@ -158,6 +160,7 @@ btn[2].addEventListener("click",function(){
   }
   titlesLany.textContent = songsLany[2].title3
   if(isPlayingByNiki){
+      titlesNiki.remove()
       isPlayingByNiki = false
   }
   MenuBar.append(titlesLany)
@@ -193,6 +196,7 @@ btn[3].addEventListener("click",function(){
   }
   titlesLany.textContent = songsLany[3].title4
   if(isPlayingByNiki){
+      titlesNiki.remove()
       isPlayingByNiki = false
   }
   MenuBar.append(titlesLany)
@@ -237,6 +241,7 @@ btnNiki[0].addEventListener("click",function(){
   }
   titlesNiki.textContent = songsNiki[0].title1
   if(isPlayingByLany){
+      titlesNiki.remove()
       isPlayingByLany = false
   }
   MenuBar.append(titlesNiki)
@@ -276,7 +281,8 @@ btnNiki[1].addEventListener("click",function(){
   }
   titlesNiki.textContent = songsNiki[1].title2
   if(isPlayingByLany){
-      isPlayingByLany = false
+    titlesLany.remove()
+    isPlayingByLany = false
   }
   MenuBar.append(titlesNiki)
     MenuBar.append(audiosNiki[1])
@@ -308,6 +314,7 @@ btnNiki[2].addEventListener("click",function(){
   }
   titlesNiki.textContent = songsNiki[2].title3
   if(isPlayingByLany){
+    titlesLany.remove()
       isPlayingByLany = false
   }
   MenuBar.append(titlesNiki)
@@ -340,6 +347,7 @@ btnNiki[3].addEventListener("click",function(){
   }
   titlesNiki.textContent = songsNiki[3].title4
   if(isPlayingByLany){
+    titlesLany.remove()
       isPlayingByLany = false
   }
   MenuBar.append(titlesNiki)
