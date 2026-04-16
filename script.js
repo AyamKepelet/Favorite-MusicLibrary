@@ -13,16 +13,16 @@ window.addEventListener("DOMContentLoaded",function(){
   let btnNiki = document.querySelectorAll(".BtnNiki")
 
   let songsLany = [ 
-      {music1: false,title1:"DNA",src: "List Song/DNA.wav"},  
-      {music2: false,title2:"XXL",src: "List Song/XXLANy.wav"}, 
-      {music3: false,title3:"Anything4You",src: "List Song/anything4u.wav"},  
-      {music4: false,title4:"you!",src: "List Song/You!.wav"}  
+      {music1: false,title1:"DNA",img1:"image/dna.jpeg",src: "List Song/DNA.wav"},  
+      {music2: false,title2:"XXL",img2:"image/XXLImg.jpeg",src: "List Song/XXLANy.wav"}, 
+      {music3: false,title3:"Anything4You",img3:"image/anything4you.png",src: "List Song/anything4u.wav"},  
+      {music4: false,title4:"you!",img4:"image/anything4you.png",src: "List Song/You!.wav"}  
     ]
   let songsNiki = [
-    {music1: false,title1:"Autumn",src: "List Song/Niki/niki-autumn-official-lyric-video-goojmt.wav"},  
-    {music2: false,title2:"Backburner",src: "List Song/Niki/niki-backburner-official-lyric-video-zeuwnv.wav"}, 
-    {music3: false,title3:"lalalostYou(Acoustic)",src: "List Song/Niki/niki-la-la-lost-you-acoustic-lyrics-r-4-gza-2.wav"},  
-    {music4: false,title4:"lowkey",src: "List Song/Niki/niki-lowkey-lyrics-3-bnsze.wav"}  
+    {music1: false,title1:"Autumn",img1:"image/niki.jpeg",src: "List Song/Niki/niki-autumn-official-lyric-video-goojmt.wav"},  
+    {music2: false,title2:"Backburner",img2:"image/niki.jpeg",src: "List Song/Niki/niki-backburner-official-lyric-video-zeuwnv.wav"}, 
+    {music3: false,title3:"lalalostYou(Acoustic)",img3:"image/lalalostyou.jpg.jpeg",src: "List Song/Niki/niki-la-la-lost-you-acoustic-lyrics-r-4-gza-2.wav"},  
+    {music4: false,title4:"lowkey",img4:"image/lowkey.jpeg",src: "List Song/Niki/niki-lowkey-lyrics-3-bnsze.wav"}  
   ]
 
     let isPlaying = false
@@ -64,14 +64,19 @@ allAudios.forEach(audio => {
 });
 
 let titlesLany = document.createElement("span")
+let imgLany = document.createElement("img")
+imgLany.classList.add("imageMenu")
 titlesLany.classList.add("MenuTitles")
 let titlesNiki = document.createElement("span")
+let imgNiki = document.createElement("img")
+imgNiki.classList.add("imageMenu")
 titlesNiki.classList.add("MenuTitles")
 //Button Lany Playlist
 btn[0].addEventListener("click",function(){
     try{
     if(isPlayingByNiki){
       titlesNiki.remove()
+      imgNiki.remove()
       isPlayingByNiki = false
     }
     songsLany[0].music1 = true
@@ -81,7 +86,9 @@ btn[0].addEventListener("click",function(){
     }
     console.log(songsLany[0].title1)
   console.log(titlesLany)
+    imgLany.src = songsLany[0].img1
     titlesLany.textContent = songsLany[0].title1
+    MenuBar.append(imgLany)
     MenuBar.append(titlesLany)
     MenuBar.append(audio[0])
     audio[0].controls = true
@@ -119,12 +126,15 @@ btn[1].addEventListener("click",function(){
   }
   console.log(songsLany[1].title2)
   console.log(titlesLany)
+  imgLany.src = songsLany[1].img2
   titlesLany.textContent = songsLany[1].title2
   if(isPlayingByNiki){
       titlesNiki.remove()
+      imgNiki.remove()
       isPlayingByNiki = false
   }
-    MenuBar.append(titlesLany)
+  MenuBar.append(imgLany) 
+  MenuBar.append(titlesLany)
     MenuBar.append(audio[1])
     audio[1].controls = true
     isPlaying = true
@@ -158,11 +168,14 @@ btn[2].addEventListener("click",function(){
       audio[i].pause()
     }
   }
+  imgLany.src = songsLany[2].img3
   titlesLany.textContent = songsLany[2].title3
   if(isPlayingByNiki){
       titlesNiki.remove()
+      imgNiki.remove()
       isPlayingByNiki = false
   }
+  MenuBar.append(imgLany)
   MenuBar.append(titlesLany)
     MenuBar.append(audio[2])
     audio[2].controls = true
@@ -194,11 +207,14 @@ btn[3].addEventListener("click",function(){
       audio[i].pause()
     }
   }
+  imgLany.src = songsLany[3].img4
   titlesLany.textContent = songsLany[3].title4
   if(isPlayingByNiki){
       titlesNiki.remove()
+      imgNiki.remove()
       isPlayingByNiki = false
   }
+  MenuBar.append(imgLany)
   MenuBar.append(titlesLany)
     MenuBar.append(audio[3])
     audio[3].controls = true
@@ -239,11 +255,14 @@ btnNiki[0].addEventListener("click",function(){
       audiosNiki[i].pause()
     }
   }
+  imgNiki.src = songsNiki[0].img1
   titlesNiki.textContent = songsNiki[0].title1
   if(isPlayingByLany){
-      titlesNiki.remove()
+      titlesLany.remove()
+      imgLany.remove()
       isPlayingByLany = false
   }
+  MenuBar.append(imgNiki)
   MenuBar.append(titlesNiki)
     MenuBar.append(audiosNiki[0])
     audiosNiki[0].controls = true
@@ -279,11 +298,14 @@ btnNiki[1].addEventListener("click",function(){
       audiosNiki[i].pause()
     }
   }
+  imgNiki.src = songsNiki[1].img2
   titlesNiki.textContent = songsNiki[1].title2
   if(isPlayingByLany){
+      imgLany.remove()
     titlesLany.remove()
     isPlayingByLany = false
   }
+  MenuBar.append(imgNiki)
   MenuBar.append(titlesNiki)
     MenuBar.append(audiosNiki[1])
     audiosNiki[1].controls = true
@@ -312,11 +334,14 @@ btnNiki[2].addEventListener("click",function(){
       audiosNiki[i].pause()
     }
   }
+  imgNiki.src = songsNiki[2].img3
   titlesNiki.textContent = songsNiki[2].title3
   if(isPlayingByLany){
     titlesLany.remove()
+      imgLany.remove()
       isPlayingByLany = false
   }
+  MenuBar.append(imgNiki)
   MenuBar.append(titlesNiki)
     MenuBar.append(audiosNiki[2])
     audiosNiki[2].controls = true
@@ -345,11 +370,14 @@ btnNiki[3].addEventListener("click",function(){
       audiosNiki[i].pause()
     }
   }
+  imgNiki.src = songsNiki[3].img4
   titlesNiki.textContent = songsNiki[3].title4
   if(isPlayingByLany){
     titlesLany.remove()
+      imgLany.remove()
       isPlayingByLany = false
   }
+  MenuBar.append(imgNiki)
   MenuBar.append(titlesNiki)
     MenuBar.append(audiosNiki[3])
     audiosNiki[3].controls = true
